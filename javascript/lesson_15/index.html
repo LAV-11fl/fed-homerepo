@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Homework 15</title>
+  <style>
+    .big-box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 20px 0;
+    }
+
+    .remove-container div {
+      width: 120px;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: lightgreen;
+      cursor: pointer;
+    }
+
+    .blockContainer {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #999;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Homework 15</h1>
+
+  <section>
+    <h2>1. onclick</h2>
+    <button id="change-color-button">Змінити колір тексту</button>
+    <p id="color-text">Цей текст змінює колір після кліку.</p>
+  </section>
+
+  <section>
+    <h2>2. ondblclick</h2>
+    <div id="double-size-box" class="big-box"></div>
+  </section>
+
+  <section>
+    <h2>3. addEventListener і removeEventListener</h2>
+    <button id="counter-button">Збільшити лічильник</button>
+    <p>Лічильник: <span id="counter-value">0</span></p>
+  </section>
+
+  <section>
+    <h2>4. Видалення елементів</h2>
+    <div id="remove-container" class="remove-container"></div>
+  </section>
+
+  <section>
+    <h2>5. event.target</h2>
+    <div class="blockContainer">
+      <button class="first">Перша кнопка</button>
+      <button class="second">Друга кнопка</button>
+      <button class="third">Третя кнопка</button>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
