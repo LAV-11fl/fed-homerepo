@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Homework 16</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    #hover-block {
+      width: 180px;
+      height: 90px;
+      background-color: lightblue;
+      border: 1px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #text-block {
+      width: 320px;
+      padding: 15px;
+      background-color: #eeeeee;
+      border: 1px solid #777;
+    }
+
+    #context-menu {
+      display: none;
+      position: absolute;
+      width: 150px;
+      padding: 5px;
+      background-color: white;
+      border: 1px solid #555;
+      box-shadow: 0 2px 5px #999;
+    }
+
+    #context-menu button {
+      display: block;
+      width: 100%;
+      margin: 3px 0;
+      text-align: left;
+    }
+
+    #hover-image {
+      width: 150px;
+      height: 100px;
+      border: 3px solid transparent;
+      background-color: #d9ecff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    #game-field,
+    #drag-field {
+      position: relative;
+      width: 320px;
+      height: 180px;
+      border: 2px solid #333;
+      background-color: #f5f5f5;
+    }
+
+    #player {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 20px;
+      top: 20px;
+      background-color: tomato;
+      border-radius: 50%;
+    }
+
+    #keyboard-menu {
+      display: none;
+      width: 180px;
+      padding: 10px;
+      background-color: #eeeeee;
+    }
+
+    #keyboard-menu li {
+      padding: 6px;
+    }
+
+    .selected-item {
+      background-color: lightgreen;
+    }
+
+    #drag-box {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      left: 20px;
+      top: 20px;
+      background-color: orange;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Homework 16</h1>
+
+  <section>
+    <h2>1. onMouseOver і onMouseOut</h2>
+    <div id="hover-block">Наведи мишку</div>
+  </section>
+
+  <section>
+    <h2>2. onContextMenu</h2>
+    <p id="text-block">Натисни правою кнопкою миші на цьому тексті, щоб відкрити своє меню.</p>
+    <div id="context-menu">
+      <button id="align-left">По лівому краю</button>
+      <button id="align-center">По центру</button>
+      <button id="align-right">По правому краю</button>
+      <button id="hide-text">Сховати текст</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Ефект для зображення</h2>
+    <div id="hover-image">Зображення</div>
+  </section>
+
+  <section>
+    <h2>4. Рух об'єкта стрілками</h2>
+    <p id="key-status">Натискай стрілки на клавіатурі.</p>
+    <div id="game-field">
+      <div id="player"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Меню з клавіатури</h2>
+    <p>Натисни M, щоб показати меню. Стрілки вгору/вниз змінюють пункт. C ховає меню.</p>
+    <ul id="keyboard-menu">
+      <li class="selected-item">Перший пункт</li>
+      <li>Другий пункт</li>
+      <li>Третій пункт</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Перетягування блоку</h2>
+    <div id="drag-field">
+      <div id="drag-box"></div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

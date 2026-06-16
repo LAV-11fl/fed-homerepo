@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Homework 18</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      margin-bottom: 30px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Homework 18</h1>
+
+  <section>
+    <h2>1. Вибір кольору сторінки</h2>
+    <label><input type="radio" name="page-color" value="lightcoral"> Червоний</label>
+    <label><input type="radio" name="page-color" value="lightgreen"> Зелений</label>
+    <label><input type="radio" name="page-color" value="lightblue"> Синій</label>
+  </section>
+
+  <section>
+    <h2>2. Хобі</h2>
+    <label><input class="hobby" type="checkbox" value="читання"> Читання</label>
+    <label><input class="hobby" type="checkbox" value="спорт"> Спорт</label>
+    <label><input class="hobby" type="checkbox" value="музика"> Музика</label>
+    <p id="hobby-result">Обрані хобі: немає</p>
+  </section>
+
+  <section>
+    <h2>3. Країна</h2>
+    <select id="country-select">
+      <option value="">Оберіть країну</option>
+      <option value="ukraine">Україна</option>
+      <option value="poland">Польща</option>
+      <option value="germany">Німеччина</option>
+    </select>
+    <p id="country-info">Інформація з'явиться тут.</p>
+  </section>
+
+  <section>
+    <h2>4. Оцінка сервісу</h2>
+    <label><input type="radio" name="rating" value="1"> 1</label>
+    <label><input type="radio" name="rating" value="2"> 2</label>
+    <label><input type="radio" name="rating" value="3"> 3</label>
+    <label><input type="radio" name="rating" value="4"> 4</label>
+    <label><input type="radio" name="rating" value="5"> 5</label>
+    <p id="rating-message">Оцінка ще не вибрана.</p>
+  </section>
+
+  <section>
+    <h2>5. Замовлення піци</h2>
+    <label>
+      Піца:
+      <select id="pizza-name">
+        <option value="Маргарита">Маргарита</option>
+        <option value="Пепероні">Пепероні</option>
+        <option value="Гавайська">Гавайська</option>
+      </select>
+    </label>
+
+    <p>Розмір:</p>
+    <label><input type="radio" name="pizza-size" value="small" checked> Мала</label>
+    <label><input type="radio" name="pizza-size" value="middle"> Середня</label>
+    <label><input type="radio" name="pizza-size" value="big"> Велика</label>
+
+    <p>Додатки:</p>
+    <label><input class="topping" type="checkbox" value="cheese"> Сир</label>
+    <label><input class="topping" type="checkbox" value="mushrooms"> Гриби</label>
+    <label><input class="topping" type="checkbox" value="olives"> Оливки</label>
+
+    <p id="pizza-result">Ціна: 100 грн</p>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
