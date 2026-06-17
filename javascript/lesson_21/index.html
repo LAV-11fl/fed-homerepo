@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Homework 21</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    .dark {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Homework 21</h1>
+
+  <section>
+    <h2>1. sessionStorage</h2>
+    <input id="session-input" type="text" placeholder="Введіть текст">
+    <button id="save-session">Зберегти</button>
+    <button id="show-session">Показати</button>
+    <p id="session-result">Тут буде збережений текст.</p>
+  </section>
+
+  <section>
+    <h2>2. localStorage налаштування</h2>
+    <label>
+      <input id="dark-mode" type="checkbox">
+      Темний фон
+    </label>
+  </section>
+
+  <section>
+    <h2>3. To-do list у localStorage</h2>
+    <input id="task-input" type="text" placeholder="Нова справа">
+    <button id="add-task">Додати</button>
+    <ul id="task-list"></ul>
+  </section>
+
+  <section>
+    <h2>4. JSON об'єкт</h2>
+    <pre id="json-output"></pre>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

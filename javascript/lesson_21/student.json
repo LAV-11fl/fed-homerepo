@@ -1,0 +1,9 @@
+{
+  "name": "Oleksandr",
+  "age": 30,
+  "skills": ["HTML", "CSS", "JavaScript"],
+  "course": {
+    "name": "JavaScript UA 2025",
+    "part": 2
+  }
+}
