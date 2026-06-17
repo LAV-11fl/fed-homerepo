@@ -64,6 +64,11 @@ let toppings = document.querySelectorAll(".topping");
 let pizzaResult = document.getElementById("pizza-result");
 
 function countPizzaPrice() {
+  if (pizzaName.value === "") {
+    pizzaResult.textContent = "Оберіть піцу";
+    return;
+  }
+
   let price = 100;
 
   for (let i = 0; i < pizzaSizes.length; i++) {
