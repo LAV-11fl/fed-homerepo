@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f5f5;
+}
+
+.menu-card {
+    width: 360px;
+    margin: 60px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px gray;
+}
+
+h1 {
+    text-align: center;
+}
+
+.food-item {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #eeeeee;
+}
+
+.food-icon {
+    font-size: 30px;
+}
+
+.food-item h3 {
+    margin: 5px 0;
+}
+
+.food-item p {
+    color: gray;
+}
+
+.food-item:hover {
+    background-color: #eae2b7;
+}

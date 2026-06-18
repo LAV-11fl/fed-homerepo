@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 - Tables and forms</title>
+</head>
+<body>
+    <h1>Домашнє завдання 4</h1>
+
+    <h2>Таблиця розкладу занять</h2>
+
+    <!-- Таблиця зроблена тільки засобами HTML -->
+    <table border="1" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2">День</th>
+            <th colspan="3">Заняття</th>
+            <th rowspan="2">Примітка</th>
+        </tr>
+        <tr>
+            <th>Час</th>
+            <th>Предмет</th>
+            <th>Викладач</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Понеділок</td>
+            <td>10:00</td>
+            <td>HTML</td>
+            <td>Олена</td>
+            <td>Повторити теги</td>
+        </tr>
+        <tr>
+            <td>12:00</td>
+            <td>Git</td>
+            <td>Ігор</td>
+            <td>Робота з репозиторієм</td>
+        </tr>
+        <tr>
+            <td>Середа</td>
+            <td>18:00</td>
+            <td colspan="2">Самостійна робота</td>
+            <td>Зробити домашнє завдання</td>
+        </tr>
+        <tr>
+            <td>Пʼятниця</td>
+            <td>19:00</td>
+            <td>Форми</td>
+            <td>Марія</td>
+            <td>Підготувати приклад форми</td>
+        </tr>
+    </table>
+
+    <h2>Форма студента</h2>
+
+    <!-- Форма з типами input, які не були основними у прикладі уроку -->
+    <form action="#">
+        <fieldset>
+            <legend>Дані для звʼязку</legend>
+
+            <p>
+                <label for="student-email">Email:</label>
+                <input type="email" id="student-email" name="student-email">
+            </p>
+
+            <p>
+                <label for="student-phone">Телефон:</label>
+                <input type="tel" id="student-phone" name="student-phone">
+            </p>
+
+            <p>
+                <label for="lesson-date">Дата заняття:</label>
+                <input type="date" id="lesson-date" name="lesson-date">
+            </p>
+
+            <p>
+                <label for="homework-file">Файл з домашнім завданням:</label>
+                <input type="file" id="homework-file" name="homework-file">
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Надіслати">
+            <input type="reset" value="Очистити">
+        </p>
+    </form>
+</body>
+</html>
