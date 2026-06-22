@@ -3,33 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 7 - Food menu</title>
+    <title>Lesson 7 - Food Menu</title>
     <link rel="stylesheet" href="style/menu.css">
 </head>
 <body>
-    <!-- Простий блок меню за прикладом з уроку -->
-    <div class="menu-card">
-        <h1>Food Menu</h1>
+    <!-- Сторінка меню за макетом з домашнього завдання -->
+    <div class="phone">
+        <button class="menu-button">☰</button>
 
-        <div class="food-item">
-            <div class="food-icon">🍕</div>
-            <h3>Піца</h3>
-            <p>Сир, томати, тісто</p>
-            <strong>120 грн</strong>
+        <h1>Menu</h1>
+
+        <form action="">
+            <input type="text" placeholder="Search food here">
+        </form>
+
+        <div class="categories">
+            <div class="category active">
+                <div class="category-img">🍔</div>
+                <p>Food</p>
+            </div>
+
+            <div class="category">
+                <div class="category-img">🥤</div>
+                <p>Drinks</p>
+            </div>
+
+            <div class="category">
+                <div class="category-img">🍰</div>
+                <p>Dessert</p>
+            </div>
         </div>
 
-        <div class="food-item">
-            <div class="food-icon">🍔</div>
-            <h3>Бургер</h3>
-            <p>Булка, котлета, салат</p>
-            <strong>95 грн</strong>
+        <h2>Burger</h2>
+
+        <div class="product">
+            <div class="product-img">🍔</div>
+            <div class="product-info">
+                <h3>Big Mac</h3>
+                <p>Rs 240</p>
+            </div>
         </div>
 
-        <div class="food-item">
-            <div class="food-icon">🥗</div>
-            <h3>Салат</h3>
-            <p>Овочі, зелень, соус</p>
-            <strong>80 грн</strong>
+        <div class="product">
+            <div class="product-img">🍔</div>
+            <div class="product-info">
+                <h3>KFC Double</h3>
+                <p>Rs 252</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-img">🍔</div>
+            <div class="product-info">
+                <h3>Fish Burger</h3>
+                <p>Rs 220</p>
+            </div>
         </div>
     </div>
 </body>

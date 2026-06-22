@@ -3,50 +3,60 @@
 }
 
 body {
-    background-color: #f6f5f5;
+    background-color: #F6F5F5;
 }
 
 .container {
     width: 360px;
-    margin: 80px auto;
-    background-color: white;
+    margin: 100px auto;
     border-radius: 20px;
-    padding: 40px 20px;
+    background-color: #FFFFFF;
+    padding: 56px 20px 91px 20px;
 }
 
 button {
     border: none;
-    background-color: white;
+    background-color: #FFFFFF;
+    padding: 0;
+}
+
+.menu-button {
+    font-size: 24px;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
+    width: 185px;
+    height: 23px;
 }
 
 .menu-items {
-    margin-top: 20px;
+    padding: 0 4px;
 }
 
 .menu-position {
     display: inline-block;
-    width: 90px;
     border: 1px solid black;
-    margin: 5px;
-    text-align: center;
+    vertical-align: top;
+    margin-right: 4px;
 }
 
 .position-img {
-    background-color: #eeeeee;
-    padding: 20px;
+    width: 74px;
+    height: 74px;
+    border-radius: 12px;
+    background-color: #EFEFEF;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 18px;
 }
 
 .position-title {
-    color: #999999;
+    color: #C4C4C4;
+    margin-left: 2px;
 }
 
 .menu-position:hover .position-img {
-    background-color: #eae2b7;
+    background-color: #EAE2B7;
 }
 
 .menu-position:hover .position-title {
