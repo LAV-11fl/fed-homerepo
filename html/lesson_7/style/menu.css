@@ -56,10 +56,15 @@ input {
 
 .category-img {
     height: 66px;
+    padding-top: 13px;
     border-radius: 12px;
     background-color: #EFEFEF;
-    font-size: 30px;
-    padding-top: 16px;
+}
+
+.category-img img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .category p {
@@ -83,17 +88,21 @@ h2 {
 
 .product-img {
     display: inline-block;
-    width: 62px;
-    height: 52px;
-    padding-top: 6px;
+    width: 74px;
+    height: 58px;
     vertical-align: middle;
     text-align: center;
-    font-size: 32px;
+}
+
+.product-img img {
+    width: 74px;
+    height: 58px;
+    object-fit: contain;
 }
 
 .product-info {
     display: inline-block;
-    margin-left: 12px;
+    margin-left: 10px;
     vertical-align: middle;
 }
 
