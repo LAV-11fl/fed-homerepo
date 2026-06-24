@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F2F2;
+    color: #2D3640;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Clearfix потрібен, щоб батьківський блок бачив float-картки. */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+main {
+    width: 65%;
+    min-width: 900px;
+    margin: 0 auto;
+    padding: 142px 0 128px;
+}
+
+h1 {
+    margin: 0;
+    color: #2D3640;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: -0.5px;
+}
+
+h1 strong {
+    font-weight: 600;
+}
+
+.sub-title-text {
+    max-width: 695px;
+    margin: 0 0 50px;
+    color: #2B292D;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.user-card {
+    width: 23%;
+    min-width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 58px 0 122px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.card-row .user-card:last-child {
+    margin-right: 0;
+}
+
+.user-photo {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.user-card h2 {
+    margin: 28px 0 4px;
+    color: #2D3640;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.625px;
+}
+
+.user-card p {
+    margin: 0 0 33px;
+    color: #4B4F52;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.skills {
+    font-size: 0;
+    text-align: center;
+}
+
+/* Іконки взяті з видимого макета Figma. */
+.skill-item {
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+    margin-right: 10px;
+    overflow: hidden;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.skills .skill-item:last-child {
+    margin-right: 0;
+}
+
+.skill-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
