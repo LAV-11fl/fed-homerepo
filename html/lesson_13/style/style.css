@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    color: #111111;
+}
+
+.page {
+    width: 975px;
+    min-height: 650px;
+    margin: 40px auto;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 38px 95px 0;
+}
+
+.logo {
+    color: #111111;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.menu,
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu a,
+.right-menu a {
+    color: #222222;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.menu .active::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 8px auto 0;
+    background-color: #e8a94e;
+    border-radius: 50%;
+}
+
+.search {
+    color: #111111;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    padding: 90px 70px 30px;
+    position: relative;
+}
+
+.photo-box img {
+    display: block;
+    width: 285px;
+    height: 360px;
+    object-fit: cover;
+}
+
+.content {
+    width: 410px;
+    flex-shrink: 0;
+}
+
+.subtitle {
+    margin: 0 0 12px;
+    color: #d99b4e;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 44px;
+    line-height: 1.25;
+}
+
+.line {
+    width: 130px;
+    height: 5px;
+    margin: 42px 0 20px;
+    background-color: #e19d43;
+    border-radius: 3px;
+}
+
+.description {
+    width: 330px;
+    margin: 0 0 18px;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.video-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #111111;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    color: white;
+    background-color: #42a5bf;
+    border: 0;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+/* Соціальні іконки стоять вертикально, як у макеті */
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+    height: 360px;
+    margin-left: auto;
+    border-left: 1px solid #777777;
+    padding-left: 28px;
+}
+
+.socials a {
+    width: 22px;
+    height: 22px;
+    color: #333333;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.socials .orange {
+    color: white;
+    background-color: #f08b3f;
+}
+
+.clients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 82px;
+    color: white;
+    background-color: #43a4ba;
+}
+
+.clients img {
+    width: 86px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.clients strong {
+    font-size: 17px;
+}
+
+.clients span {
+    font-size: 14px;
+}
+
+
+
+
