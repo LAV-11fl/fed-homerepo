@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 - Flex and Sizes</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>Lesson 12 - Flex and Sizes</h1>
+
+    <section>
+        <h2>Приклад flex</h2>
+        <p>Блоки розташовані через flex, як у прикладі з уроку.</p>
+
+        <!-- Контейнер керує розташуванням внутрішніх елементів -->
+        <div class="flex-box">
+            <div class="item item-one">1</div>
+            <div class="item item-two">2</div>
+            <div class="item item-three">3</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Min та max розміри</h2>
+        <p>Тут показано, як працюють мінімальна і максимальна ширина та висота.</p>
+
+        <div class="size-wrapper">
+            <div class="size-card min-width-card">
+                <h3>min-width</h3>
+                <p>Картка не стає вужчою за 220px.</p>
+            </div>
+
+            <div class="size-card max-width-card">
+                <h3>max-width</h3>
+                <p>Картка не розтягується більше ніж 320px.</p>
+            </div>
+
+            <div class="size-card min-height-card">
+                <h3>min-height</h3>
+                <p>Навіть з коротким текстом картка має мінімальну висоту.</p>
+            </div>
+
+            <div class="size-card max-height-card">
+                <h3>max-height</h3>
+                <p>У цієї картки є максимальна висота. Якщо тексту стане багато, з'явиться прокрутка, і блок не буде безкінечно збільшуватися вниз.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

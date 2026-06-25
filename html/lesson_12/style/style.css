@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    min-height: 300px;
+    padding: 20px;
+    background-color: #2b57d9;
+}
+
+.item {
+    padding: 30px;
+    color: white;
+    text-align: center;
+    background-color: #777777;
+    border: 2px solid white;
+    flex-grow: 1;
+}
+
+/* Другий блок стає вищим і переходить у кінець ряду */
+.item-two {
+    align-self: stretch;
+    order: 3;
+    flex-grow: 2;
+}
+
+/* Третій блок піднімається вгору і займає більше місця */
+.item-three {
+    align-self: flex-start;
+    order: 2;
+    flex-grow: 3;
+}
+
+.size-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.size-card {
+    width: 25%;
+    min-width: 180px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+.min-width-card {
+    min-width: 220px;
+}
+
+.max-width-card {
+    width: 100%;
+    max-width: 320px;
+}
+
+.min-height-card {
+    min-height: 150px;
+}
+
+.max-height-card {
+    max-height: 110px;
+    overflow: auto;
+}
