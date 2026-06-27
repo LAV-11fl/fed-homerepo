@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 15 - Netflix Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <main class="page">
+    <img class="hero-bg" src="img/hero-bg.png" alt="Stranger Things background">
+
+    <header class="header">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="img/netflix-logo.png" alt="Netflix">
+      </a>
+      <span class="header-line"></span>
+      <p class="date">Friday July 8th</p>
+      <a class="search" href="https://www.google.com/search?q=netflix+stranger+things" target="_blank" rel="noopener">
+        <img src="img/search-icon.svg" alt="Search">
+      </a>
+      <img class="avatar" src="img/avatar.png" alt="User avatar">
+    </header>
+
+    <section class="content">
+      <p class="genres">Drama <span></span> Thriller <span></span> Supernatural</p>
+      <h1>Stranger Things</h1>
+      <p class="details"><b>2019</b> <span></span> <b>DIRECTOR:</b> Shawn Levy <span></span> <b>seasons:</b> 3 (5 Episodes)</p>
+      <p class="description">When a young boy vanishes, friends find a dangerous mystery.</p>
+
+      <div class="stars">
+        <img src="img/star-filled.svg" alt="rating star">
+        <img src="img/star-filled.svg" alt="rating star">
+        <img src="img/star-filled.svg" alt="rating star">
+        <img src="img/star-line.svg" alt="empty rating star">
+        <img src="img/star-line.svg" alt="empty rating star">
+      </div>
+
+      <a class="stream" href="https://www.netflix.com" target="_blank" rel="noopener">
+        STREAM NOW <img src="img/play.svg" alt="Play">
+      </a>
+      <a class="episodes" href="#popular">ALL EPISODES</a>
+    </section>
+
+    <section class="popular" id="popular">
+      <h2>POPULAR THIS WEEK</h2>
+      <div class="posters">
+        <img src="img/poster-1.png" alt="Breaking Bad poster">
+        <img src="img/poster-2.png" alt="Dark Rain poster">
+        <img src="img/poster-3.png" alt="Life in a Year poster">
+        <img src="img/poster-4.png" alt="Money Heist poster">
+        <img src="img/poster-5.png" alt="Squid Game poster">
+      </div>
+      <button class="arrow arrow-prev" type="button" aria-label="Previous poster">
+        <img src="img/arrow-prev.svg" alt="">
+      </button>
+      <button class="arrow arrow-next" type="button" aria-label="Next poster">
+        <img src="img/arrow-next.svg" alt="">
+      </button>
+    </section>
+
+    <div class="age"><span></span>16+</div>
+  </main>
+</body>
+</html>
