@@ -1,0 +1,12 @@
+{
+  "name": "homework-27-gulp-clean-css",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0"
+  },
+  "scripts": {
+    "styles": "gulp styles"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "homework-26-gulp-basic",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  },
+  "scripts": {
+    "test-task": "gulp test"
+  }
+}
