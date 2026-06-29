@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 14 - Room.us Figma correction</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -23,9 +20,9 @@
 
             <div class="header-right">
                 <a href="#clients">Category</a>
-                <a class="search" href="https://www.google.com/search?q=modern+workspace+design" target="_blank" rel="noopener">
-                    <img src="img/search.png" alt="Search">
-                </a>
+                <form class="search-block" action="https://www.google.com/search" method="get" target="_blank">
+                    <input class="search-input" type="search" name="q" placeholder="Search" aria-label="Search">
+                </form>
             </div>
         </header>
 
@@ -37,7 +34,6 @@
             <section class="text-block">
                 <p class="subtitle">Work Space</p>
                 <h1>Modern Design work space</h1>
-                <div class="orange-line"></div>
                 <p class="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
                     purus sit amet luctus venenatis, lectus magna fringilla urna,
