@@ -11,69 +11,64 @@
 </head>
 <body>
   <main class="page">
-    <img class="hero-bg" src="img/hero-bg.png" alt="Stranger Things background">
-
     <header class="header">
-      <a href="index.html" class="logo-link">
-        <img class="logo" src="img/netflix-logo.png" alt="Netflix">
-      </a>
-      <span class="header-line"></span>
-      <p class="date">Friday July 8th</p>
-      <a class="search" href="https://www.google.com/search?q=netflix+stranger+things" target="_blank" rel="noopener">
-        <img src="img/search-icon.svg" alt="Search">
-      </a>
-      <img class="avatar" src="img/avatar.png" alt="User avatar">
+      <div class="brand-row">
+        <a href="index.html" aria-label="Netflix homepage"><img class="logo" src="img/netflix-logo.png" alt="Netflix"></a>
+        <span class="header-line" aria-hidden="true"></span>
+        <p class="date">Friday July 8th</p>
+      </div>
+      <div class="header-actions">
+        <form class="search-form" action="https://www.google.com/search" target="_blank">
+          <label class="visually-hidden" for="movie-search">Search</label>
+          <input id="movie-search" name="q" type="search" value="netflix stranger things" aria-label="Search">
+        </form>
+        <img class="avatar" src="img/avatar.png" alt="User avatar">
+      </div>
     </header>
-
     <section class="content">
       <p class="genres">Drama <span></span> Thriller <span></span> Supernatural</p>
       <h1>Stranger Things</h1>
       <p class="details"><b>2019</b> <span></span> <b>DIRECTOR:</b> Shawn Levy <span></span> <b>seasons:</b> 3 (5 Episodes)</p>
-      <p class="description">When a young boy vanishes, friends find a dangerous mystery.</p>
-
-      <div class="stars">
-        <img src="img/star-filled.svg" alt="rating star">
-        <img src="img/star-filled.svg" alt="rating star">
-        <img src="img/star-filled.svg" alt="rating star">
-        <img src="img/star-line.svg" alt="empty rating star">
-        <img src="img/star-line.svg" alt="empty rating star">
+      <p class="description">In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits.</p>
+      <div class="stars" aria-label="Rating: 3 of 5">
+        <img src="img/star-filled.svg" alt=""><img src="img/star-filled.svg" alt=""><img src="img/star-filled.svg" alt=""><img src="img/star-line.svg" alt=""><img src="img/star-line.svg" alt="">
       </div>
-
-      <a class="stream" href="https://www.netflix.com" target="_blank" rel="noopener">
-        STREAM NOW <img src="img/play.svg" alt="Play">
-      </a>
-      <a class="episodes" href="#popular">ALL EPISODES</a>
+      <div class="actions">
+        <a class="stream" href="https://www.netflix.com" target="_blank" rel="noopener">STREAM NOW <img src="img/play.svg" alt=""></a>
+        <a class="episodes" href="#popular">ALL EPISODES</a>
+      </div>
     </section>
-
     <section class="popular" id="popular">
-      <h2>POPULAR THIS WEEK</h2>
-      <div class="posters">
-        <a href="https://www.netflix.com/search?q=Breaking%20Bad" target="_blank" rel="noopener">
-          <img src="img/poster-1.png" alt="Breaking Bad poster">
-        </a>
-        <a href="https://www.netflix.com/search?q=The%20Rain" target="_blank" rel="noopener">
-          <img src="img/poster-2.png" alt="The Rain poster">
-        </a>
-        <a href="https://www.netflix.com/search?q=Life%20in%20a%20Year" target="_blank" rel="noopener">
-          <img src="img/poster-3.png" alt="Life in a Year poster">
-        </a>
-        <a href="https://www.netflix.com/search?q=Money%20Heist" target="_blank" rel="noopener">
-          <img src="img/poster-4.png" alt="Money Heist poster">
-        </a>
-        <a href="https://www.netflix.com/search?q=Squid%20Game" target="_blank" rel="noopener">
-          <img src="img/poster-5.png" alt="Squid Game poster">
-        </a>
+      <div class="popular-head">
+        <h2>POPULAR THIS WEEK</h2>
+        <div class="arrows"><button class="arrow" type="button" aria-label="Previous poster"><img src="img/arrow-prev.svg" alt=""></button><button class="arrow" type="button" aria-label="Next poster"><img src="img/arrow-next.svg" alt=""></button></div>
       </div>
-      <button class="arrow arrow-prev" type="button" aria-label="Previous poster">
-        <img src="img/arrow-prev.svg" alt="">
-      </button>
-      <button class="arrow arrow-next" type="button" aria-label="Next poster">
-        <img src="img/arrow-next.svg" alt="">
-      </button>
+      <div class="posters">
+        <a href="https://www.netflix.com/search?q=Breaking%20Bad" target="_blank" rel="noopener"><img src="img/poster-1.png" alt="Breaking Bad poster"></a>
+        <a href="https://www.netflix.com/search?q=The%20Rain" target="_blank" rel="noopener"><img src="img/poster-2.png" alt="The Rain poster"></a>
+        <a href="https://www.netflix.com/search?q=Life%20in%20a%20Year" target="_blank" rel="noopener"><img src="img/poster-3.png" alt="Life in a Year poster"></a>
+        <a href="https://www.netflix.com/search?q=Money%20Heist" target="_blank" rel="noopener"><img src="img/poster-4.png" alt="Money Heist poster"></a>
+        <a href="https://www.netflix.com/search?q=Squid%20Game" target="_blank" rel="noopener"><img src="img/poster-5.png" alt="Squid Game poster"></a>
+      </div>
     </section>
-
     <div class="age"><span></span>16+</div>
   </main>
-</body>
-</html>
+  <script>
+    const posters = document.querySelector('.posters');
+    const [prevPoster, nextPoster] = document.querySelectorAll('.arrow');
 
+    function posterStep() {
+      const poster = posters.querySelector('a');
+      const gap = parseFloat(getComputedStyle(posters).columnGap) || 0;
+      return poster ? poster.offsetWidth + gap : 200;
+    }
+
+    prevPoster.addEventListener('click', () => {
+      posters.scrollBy({ left: -posterStep(), behavior: 'smooth' });
+    });
+
+    nextPoster.addEventListener('click', () => {
+      posters.scrollBy({ left: posterStep(), behavior: 'smooth' });
+    });
+  </script></body>
+</html>
