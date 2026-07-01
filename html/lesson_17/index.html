@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 17 - Shoppy responsive page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/shoppy.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#women">Women</a>
+      <a href="#men">Men</a>
+      <a href="#kids">Kids</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#sales">Sales</a>
+    </nav>
+    <a class="logo" href="index.html">Shoppy</a>
+    <div class="header-actions">
+      <a class="icon-link" href="#search" aria-label="Search"><img src="img/icon-search.svg" alt=""></a>
+      <a class="icon-link" href="#bag" aria-label="Shopping bag"><img src="img/icon-bag.svg" alt=""></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-shoe hero-shoe-left" src="img/hero-shoe-left.svg" alt="">
+      <img class="hero-shoe hero-shoe-right" src="img/hero-shoe-right.svg" alt="">
+      <div class="hero-copy">
+        <h1 id="hero-title">Build for flight</h1>
+        <p>Introducing product name.<br>Our lighest shoe ever.</p>
+        <a class="button button-dark" href="#new-releases">SHOP NOW</a>
+      </div>
+    </section>
+
+    <section class="categories" aria-label="Featured categories">
+      <a class="category-card" id="women" href="#new-releases">
+        <img src="img/women.jpg" alt="White boots for women">
+        <span class="category-title">Women</span>
+        <span class="category-link">Shop now</span>
+      </a>
+      <a class="category-card category-card-dark" id="men" href="#top-kicks">
+        <img src="img/men.jpg" alt="Men sneakers">
+        <span class="category-title">Men</span>
+        <span class="category-link">Shop now</span>
+      </a>
+    </section>
+
+    <section class="product-section" id="new-releases">
+      <h2>New Releases</h2>
+      <div class="product-strip" tabindex="0" aria-label="New releases products">
+        <article class="product-card"><img src="img/new-1.jpg" alt="Brown shoes"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-2.jpg" alt="Pink shoes"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-3.jpg" alt="Pink sandals"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-4.jpg" alt="Sneaker on box"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-5.jpg" alt="Blue shoe"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-6.jpg" alt="Shoes"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/new-7.jpg" alt="Shoes"><h3>Product name</h3><p>$299 USD</p></article>
+      </div>
+      <div class="scroll-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="product-section" id="top-kicks">
+      <h2>Top Kicks</h2>
+      <div class="product-strip" tabindex="0" aria-label="Top kicks products">
+        <article class="product-card"><img src="img/kick-1.jpg" alt="Black heels"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-2.jpg" alt="White boots"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-3.jpg" alt="Gray sneaker"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-4.jpg" alt="Black heels"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-5.jpg" alt="Sandals"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-6.jpg" alt="Shoes"><h3>Product name</h3><p>$299 USD</p></article>
+        <article class="product-card"><img src="img/kick-7.jpg" alt="Shoes"><h3>Product name</h3><p>$299 USD</p></article>
+      </div>
+      <div class="scroll-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Never miss<br>a drop.</h2>
+      <p>Receive updates about our new products and promotion.</p>
+      <a class="button button-outline" href="mailto:hello@example.com">JOIN MAILING LIST</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column"><h2>MY ACCOUNT</h2><a href="#">Sign in</a><a href="#">Register</a><a href="#">Order status</a></div>
+    <div class="footer-column"><h2>HELP</h2><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Sizing</a></div>
+    <div class="footer-column"><h2>ABOUT</h2><a href="#">Our story</a><a href="#">Media</a><a href="#">Sustainability</a></div>
+    <div class="footer-column"><h2>LEGAL STUFF</h2><a href="#">Terms of use</a><a href="#">Terms of sales</a><a href="#">Privacy policy</a></div>
+    <div class="footer-column social"><h2>FOLLOW US</h2><div><a href="#" aria-label="Facebook"><img src="img/icon-fb.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="img/icon-instagram.svg" alt=""></a><a href="#" aria-label="Twitter"><img src="img/icon-twitter.svg" alt=""></a><a href="#" aria-label="LinkedIn"><img src="img/icon-linkedin.svg" alt=""></a></div></div>
+    <p class="copyright">2020 Shoppy Inc. All Right Reserved</p>
+  </footer>
+</body>
+</html>

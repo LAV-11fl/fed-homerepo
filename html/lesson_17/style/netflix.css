@@ -1,0 +1,430 @@
+@import url(reset.css);
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1219;
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* Page background */
+.page {
+  width: min(100%, 1728px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 70px 40px 49px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(15,18,25,.98) 0%, rgba(15,18,25,.86) 30%, rgba(15,18,25,.22) 64%, rgba(15,18,25,.04) 100%), url(../netflix-img/hero-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand-row, .header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.brand-row {
+  gap: 24px;
+}
+
+.logo {
+  width: 156px;
+  height: auto;
+  display: block;
+}
+
+.header-line {
+  width: 3px;
+  height: 28px;
+  background: #fff;
+}
+
+.date {
+  color: #c8c8c8;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.header-actions {
+  gap: 45px;
+}
+
+/* Search and profile */
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input {
+  width: 0;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: transparent;
+  background: transparent;
+}
+
+.search-button {
+  width: 43px;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 31px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.search-button:hover {
+  color: #a7a6a6;
+  transform: scale(1.05);
+}
+
+.search-form:focus-within input {
+  width: 220px;
+  padding: 0 12px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+.avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Movie content */
+.content {
+  width: min(100%, 900px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 48px;
+}
+
+.genres {
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.genres span, .details span {
+  display: inline-block;
+  width: 3px;
+  height: 1.05em;
+  margin: 0 18px -5px;
+  background: #fff;
+}
+
+h1 {
+  margin: 0 0 22px;
+  font-size: clamp(44px, 5vw, 64px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: 3.52px;
+}
+
+.details {
+  color: #a7a6a6;
+  font-size: clamp(20px, 2vw, 29px);
+  line-height: 1.35;
+}
+
+.details b {
+  color: #fff;
+  font-size: clamp(21px, 2vw, 30px);
+  font-weight: 500;
+}
+
+.details span {
+  height: .75em;
+  margin-bottom: -2px;
+}
+
+.description {
+  max-width: 864px;
+  margin-top: 14px;
+  color: #a7a6a6;
+  font-size: 24px;
+  line-height: 1.18;
+}
+
+.stars {
+  display: flex;
+  gap: 14px;
+  margin-top: 19px;
+}
+
+.stars i {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.stars .filled {
+  color: #ffea2b;
+}
+
+.stars .empty {
+  color: #fff;
+}
+
+/* Buttons and rating */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+  margin-top: 53px;
+}
+
+.stream, .episodes {
+  min-width: 272px;
+  min-height: 64px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.stream {
+  background: #d40d1f;
+}
+
+.stream i {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.episodes {
+  border: 3px solid #fff;
+}
+
+.stream:hover, .episodes:hover {
+  opacity: .86;
+  transform: translateY(-2px);
+}
+
+/* Popular posters */
+.popular {
+  width: min(100%, 949px);
+  margin-top: auto;
+}
+
+.popular-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.popular h2 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: 2.97px;
+}
+
+.arrows {
+  display: flex;
+  gap: 21px;
+}
+
+.arrow {
+  width: 41px;
+  height: 41px;
+  padding: 0;
+  border: 2px solid #a7a6a6;
+  border-radius: 50%;
+  background: transparent;
+  color: #a7a6a6;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.arrow:hover {
+  border-color: #fff;
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.posters {
+  display: flex;
+  gap: 50px;
+  overflow: visible;
+  padding: 10px 14px 12px 0;
+}
+
+.posters a {
+  flex: 0 0 151px;
+  width: 151px;
+  height: 210px;
+  scroll-snap-align: start;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.posters a:last-child {
+  flex-basis: 145px;
+  width: 145px;
+}
+
+.posters a:hover {
+  opacity: 1;
+  transform: translateY(-10px) scale(1.04);
+}
+
+.posters img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  object-fit: cover;
+  display: block;
+}
+
+/* Age badge */
+.age {
+  position: fixed;
+  right: 0;
+  bottom: 103px;
+  width: 174px;
+  min-height: 66px;
+  background: rgba(255,255,255,.49);
+  display: grid;
+  grid-template-columns: 33px 1fr;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.age span {
+  align-self: stretch;
+  background: #d40d1f;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page {
+    padding: 32px 20px 36px;
+    gap: 42px;
+    background-position: 58% center;
+  }
+  .header, .brand-row {
+    flex-wrap: wrap;
+  }
+  .header-actions {
+    gap: 18px;
+    margin-left: auto;
+  }
+  .logo {
+    width: 120px;
+  }
+  .date {
+    font-size: 18px;
+  }
+  .content {
+    margin-top: 18px;
+  }
+  .genres {
+    font-size: 22px;
+  }
+  .details, .description {
+    font-size: 18px;
+  }
+  .actions {
+    gap: 18px;
+    margin-top: 34px;
+  }
+  .stream, .episodes {
+    min-width: min(100%, 250px);
+    font-size: 18px;
+  }
+  .posters {
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 12px;
+  }
+  .age {
+    bottom: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    align-items: flex-start;
+  }
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .search-form:focus-within input {
+    width: 190px;
+  }
+  h1 {
+    letter-spacing: 1px;
+  }
+  .genres span, .details span {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .popular-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .arrows {
+    align-self: flex-end;
+  }
+}
+

@@ -1,0 +1,542 @@
+@import url(reset.css);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: Poppins, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.site-header {
+  width: min(100%, 1512px);
+  margin: 0 auto;
+  min-height: 11rem;
+  padding: 3rem 2.4rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(2.8rem, 3vw, 4.6rem);
+  padding-top: 1.6rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+}
+
+.main-nav a:hover,
+.icon-link:hover {
+  opacity: .62;
+}
+
+.logo {
+  width: 16.3rem;
+  height: 4.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -.08rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 4.6rem;
+  padding-top: 2.4rem;
+}
+
+.icon-link {
+  width: 2.2rem;
+  height: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s ease;
+}
+
+.hamburger {
+  display: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: .2rem;
+  margin-bottom: .45rem;
+  background: #000;
+}
+
+.hero {
+  width: min(100%, 1512px);
+  min-height: 64rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy {
+  width: 31rem;
+  padding-top: 23.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1,
+.newsletter h2,
+.product-section h2,
+.category-title {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 800;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 6rem;
+  line-height: 6rem;
+  letter-spacing: -.3rem;
+}
+
+.hero p {
+  margin: 1rem 0 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+}
+
+.hero-shoe {
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-shoe-left {
+  width: 59.7rem;
+  left: 39.8rem;
+  top: 6.9rem;
+}
+
+.hero-shoe-right {
+  width: 46.3rem;
+  right: -40.8rem;
+  top: 5.9rem;
+}
+
+.button {
+  min-width: 19.5rem;
+  min-height: 5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-.2rem);
+  opacity: .8;
+}
+
+.button-dark {
+  border-radius: 1.5rem;
+  background: #000;
+  color: #fff;
+}
+
+.categories {
+  width: min(100%, 1512px);
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.category-card {
+  min-height: 45.4rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.04);
+}
+
+.category-title {
+  position: absolute;
+  left: 2rem;
+  top: 2.5rem;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+
+.category-link {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+}
+
+.category-card:first-child .category-link {
+  left: auto;
+  right: 3rem;
+  color: #000;
+}
+
+.product-section {
+  width: min(100%, 1512px);
+  margin: 6.2rem auto 0;
+  padding: 0 2.4rem;
+}
+
+.product-section h2 {
+  margin: 0 0 2rem;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.product-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 30rem;
+  gap: 3.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1.6rem;
+}
+
+.product-strip::-webkit-scrollbar {
+  height: 0;
+}
+
+.product-card {
+  scroll-snap-align: start;
+}
+
+.product-card img {
+  width: 30rem;
+  height: 25.2rem;
+  object-fit: cover;
+}
+
+.product-card h3,
+.product-card p {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.product-card h3 {
+  margin-top: .6rem;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-weight: 400;
+}
+
+.scroll-line {
+  height: .7rem;
+  margin-top: 1.4rem;
+  background: #e1e1e1;
+}
+
+.scroll-line span {
+  display: block;
+  width: 30rem;
+  height: 100%;
+  background: #000;
+}
+
+.newsletter {
+  width: min(100%, 1512px);
+  margin: 14.5rem auto 13.5rem;
+  text-align: center;
+}
+
+.newsletter h2 {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+
+.newsletter p {
+  width: min(100%, 34.2rem);
+  margin: 1.4rem auto 2.2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+}
+
+.button-outline {
+  border: .2rem solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.footer {
+  min-height: 28.5rem;
+  padding: 5rem 2.4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(12rem, 1fr));
+  gap: 4rem;
+  background: #000;
+  color: #fff;
+}
+
+.footer-column h2 {
+  margin: 0 0 .6rem;
+  color: #c4c4c4;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  opacity: .5;
+}
+
+.footer-column a {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
+.social div {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.social img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  margin: 5rem 0 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  opacity: .4;
+}
+
+@media (max-width: 1100px) {
+  .main-nav {
+    gap: 2rem;
+    font-size: 1.8rem;
+  }
+  .hero {
+    min-height: 58rem;
+  }
+  .hero-shoe-left {
+    width: 48rem;
+    left: 34rem;
+  }
+  .hero-shoe-right {
+    width: 34rem;
+    right: -12rem;
+  }
+  .category-card {
+    min-height: 36rem;
+  }
+  .footer {
+    grid-template-columns: repeat(3, minmax(12rem, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    font-size: 10px;
+  }
+  .site-header {
+    min-height: 12.1rem;
+    padding: 3.4rem 3.1rem 2rem;
+    align-items: flex-start;
+  }
+  .hamburger {
+    display: block;
+    margin-top: 1.6rem;
+  }
+  .main-nav {
+    display: none;
+  }
+  .logo {
+    width: 16.3rem;
+    height: 4.2rem;
+    margin: 0;
+  }
+  .header-actions {
+    gap: 2.4rem;
+    padding-top: 1.9rem;
+  }
+  .hero {
+    min-height: 72.7rem;
+    padding: 0 2.4rem;
+    overflow: hidden;
+  }
+  .hero-copy {
+    width: 30.1rem;
+    margin: 0 auto;
+    padding-top: 41.1rem;
+    text-align: left;
+  }
+  .hero h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+    letter-spacing: -.3rem;
+  }
+  .hero p {
+    width: 25.1rem;
+    margin-left: 2.5rem;
+  }
+  .hero .button {
+    margin-left: 5.3rem;
+  }
+  .hero-shoe-left {
+    width: 23rem;
+    left: -2.2rem;
+    top: 0;
+  }
+  .hero-shoe-right {
+    width: 24.6rem;
+    right: -27.7rem;
+    top: 6.6rem;
+  }
+  .categories {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.4rem;
+    gap: 2.5rem;
+  }
+  .category-card {
+    min-height: 34.2rem;
+  }
+  .category-title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .product-section {
+    margin-top: 4.2rem;
+    padding: 0 2.4rem;
+  }
+  .product-section h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+  .product-strip {
+    grid-auto-columns: 25.2rem;
+    gap: 1.6rem;
+  }
+  .product-card img {
+    width: 25.2rem;
+    height: 25.2rem;
+  }
+  .product-card h3,
+  .product-card p {
+    font-size: 1.8rem;
+  }
+  .scroll-line span {
+    width: 7.4rem;
+  }
+  .newsletter {
+    margin: 8.5rem auto 8.5rem;
+    padding: 0 2.4rem;
+  }
+  .footer {
+    min-height: 43.5rem;
+    padding: 4.7rem 2.4rem 2rem;
+    grid-template-columns: repeat(2, minmax(13rem, 1fr));
+    gap: 2.4rem 1.6rem;
+  }
+  .social div {
+    gap: 1.3rem;
+  }
+  .copyright {
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+  .logo {
+    width: 12.8rem;
+  }
+  .icon-link {
+    width: 1.9rem;
+  }
+  .header-actions {
+    gap: 1.4rem;
+  }
+  .hero,
+  .categories,
+  .product-section,
+  .newsletter {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+  .hero h1 {
+    font-size: 5.2rem;
+    line-height: 5.2rem;
+  }
+  .hero-copy {
+    width: 100%;
+  }
+}
+
+
