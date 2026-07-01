@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 16 - Netflix Homepage Icons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand-row">
+        <a href="index.html" aria-label="Netflix homepage"><img class="logo" src="img/netflix-logo.png" alt="Netflix"></a>
+        <span class="header-line" aria-hidden="true"></span>
+        <p class="date">Friday July 8th</p>
+      </div>
+      <div class="header-actions">
+        <form class="search-form" action="https://www.google.com/search" target="_blank">
+          <label class="visually-hidden" for="movie-search">Search</label>
+          <input id="movie-search" name="q" type="search" value="netflix stranger things" aria-label="Search">
+          <button class="search-button" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <img class="avatar" src="img/avatar.png" alt="User avatar">
+      </div>
+    </header>
+    <section class="content">
+      <p class="genres">Drama <span></span> Thriller <span></span> Supernatural</p>
+      <h1>Stranger Things</h1>
+      <p class="details"><b>2019</b> <span></span> <b>DIRECTOR:</b> Shawn Levy <span></span> <b>seasons:</b> 3 (5 Episodes)</p>
+      <p class="description">In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits.</p>
+      <div class="stars" aria-label="Rating: 3 of 5">
+        <i class="fa-solid fa-star filled"></i><i class="fa-solid fa-star filled"></i><i class="fa-solid fa-star filled"></i><i class="fa-regular fa-star empty"></i><i class="fa-regular fa-star empty"></i>
+      </div>
+      <div class="actions">
+        <a class="stream" href="https://www.netflix.com" target="_blank" rel="noopener">STREAM NOW <i class="fa-solid fa-circle-play"></i></a>
+        <a class="episodes" href="#popular">ALL EPISODES</a>
+      </div>
+    </section>
+    <section class="popular" id="popular">
+      <div class="popular-head">
+        <h2>POPULAR THIS WEEK</h2>
+        <div class="arrows"><button class="arrow" type="button" aria-label="Previous poster"><i class="fa-solid fa-chevron-left"></i></button><button class="arrow" type="button" aria-label="Next poster"><i class="fa-solid fa-chevron-right"></i></button></div>
+      </div>
+      <div class="posters">
+        <a href="https://www.netflix.com/search?q=Breaking%20Bad" target="_blank" rel="noopener"><img src="img/poster-1.png" alt="Breaking Bad poster"></a>
+        <a href="https://www.netflix.com/search?q=The%20Rain" target="_blank" rel="noopener"><img src="img/poster-2.png" alt="The Rain poster"></a>
+        <a href="https://www.netflix.com/search?q=Life%20in%20a%20Year" target="_blank" rel="noopener"><img src="img/poster-3.png" alt="Life in a Year poster"></a>
+        <a href="https://www.netflix.com/search?q=Money%20Heist" target="_blank" rel="noopener"><img src="img/poster-4.png" alt="Money Heist poster"></a>
+        <a href="https://www.netflix.com/search?q=Squid%20Game" target="_blank" rel="noopener"><img src="img/poster-5.png" alt="Squid Game poster"></a>
+      </div>
+    </section>
+    <div class="age"><span></span>16+</div>
+  </main>
+  <script>
+    const posters = document.querySelector('.posters');
+    const [prevPoster, nextPoster] = document.querySelectorAll('.arrow');
+
+    function posterStep() {
+      const poster = posters.querySelector('a');
+      const gap = parseFloat(getComputedStyle(posters).columnGap) || 0;
+      return poster ? poster.offsetWidth + gap : 200;
+    }
+
+    prevPoster.addEventListener('click', () => {
+      posters.scrollBy({ left: -posterStep(), behavior: 'smooth' });
+    });
+
+    nextPoster.addEventListener('click', () => {
+      posters.scrollBy({ left: posterStep(), behavior: 'smooth' });
+    });
+  </script></body>
+</html>
