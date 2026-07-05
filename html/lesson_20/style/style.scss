@@ -1,0 +1,484 @@
+@use "sass:color";
+
+// SCSS-змінні: значення збираються в одному місці перед компіляцією у CSS.
+$page-bg: #f8faf8;
+$brand-green: #386e41;
+$brand-pink: #bc436a;
+$text-main: #333333;
+$text-muted: #767676;
+$text-soft: #7a7a7a;
+$text-nav: #776677;
+$text-light: #ffffff;
+$input-line: rgba(255, 255, 255, 0.9);
+
+$font-main: Avenir, "Open Sans", Arial, sans-serif;
+$font-accent: "Open Sans", Arial, sans-serif;
+$container-width: 75rem;
+$radius-small: 0.25rem;
+$radius-medium: 0.5rem;
+$transition-fast: 0.2s ease;
+
+// CSS custom properties залишаються для адаптивних перевизначень у браузері.
+:root {
+    --page-bg: #{$page-bg};
+    --brand-green: #{$brand-green};
+    --brand-pink: #{$brand-pink};
+    --text-main: #{$text-main};
+    --text-muted: #{$text-muted};
+    --text-soft: #{$text-soft};
+    --text-nav: #{$text-nav};
+    --text-light: #{$text-light};
+    --input-line: #{$input-line};
+
+    --font-main: #{$font-main};
+    --font-accent: #{$font-accent};
+    --base-font-size: 16px;
+
+    --container-width: #{$container-width};
+    --container-gap: 15rem;
+    --header-padding-top: 2.5rem;
+    --hero-padding-top: 7.5rem;
+    --hero-padding-bottom: 2.5rem;
+    --hero-min-height: calc(100vh - 4.9375rem);
+    --hero-grid-height: 54rem;
+    --hero-columns: minmax(24rem, 32.875rem) minmax(32rem, 50.75rem);
+    --hero-column-gap: 4.6rem;
+    --hero-title-size: clamp(2rem, 2.5vw, 2.25rem);
+    --hero-title-line-height: 1.36;
+    --hero-text-size: 1.125rem;
+    --hero-image-width: min(56.4vw, 50.75rem);
+    --hero-image: url("../img/hero-traveler.jpg");
+
+    --radius-small: #{$radius-small};
+    --radius-medium: #{$radius-medium};
+    --search-gap: 3.25rem;
+    --search-padding: 1.875rem 2.375rem;
+    --button-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.11);
+    --button-shadow-hover: 0 0.5rem 1.5rem #{rgba($brand-pink, 0.24)};
+    --transition-fast: #{$transition-fast};
+
+    --decor-size: 7.5rem;
+    --decor-border: 0.625rem;
+    --decor-top: 50.8vh;
+    --decor-left: -2.1875rem;
+
+    font-size: var(--base-font-size);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--page-bg);
+    color: var(--text-main);
+    font-family: var(--font-main);
+}
+
+.container {
+    width: min(100% - var(--container-gap), var(--container-width));
+    margin: 0 auto;
+}
+
+.site-header {
+    position: relative;
+    z-index: 4;
+    padding: var(--header-padding-top) 0 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    color: var(--brand-pink);
+    font-family: var(--font-accent);
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    color: var(--text-nav);
+    font-size: 1rem;
+
+    a {
+        transition: color var(--transition-fast), transform var(--transition-fast);
+
+        &:hover {
+            color: var(--brand-pink);
+            transform: translateY(-0.08rem);
+        }
+    }
+
+    .active {
+        color: var(--brand-pink);
+    }
+}
+
+.guide-btn {
+    padding: 0.5rem;
+    border-radius: var(--radius-small);
+    background-color: var(--brand-green);
+    color: var(--text-light) !important;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: var(--hero-min-height);
+    padding: var(--hero-padding-top) 0 var(--hero-padding-bottom);
+}
+
+.hero-container {
+    position: relative;
+    display: grid;
+    min-height: var(--hero-grid-height);
+    grid-template-columns: var(--hero-columns);
+    grid-template-rows: auto 1fr auto auto;
+    column-gap: var(--hero-column-gap);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    align-self: start;
+    padding-top: 5.25rem;
+
+    h1 {
+        max-width: 32.875rem;
+        font-size: var(--hero-title-size);
+        line-height: var(--hero-title-line-height);
+        font-weight: 800;
+
+        span {
+            color: var(--brand-pink);
+        }
+    }
+}
+
+.hero-text {
+    max-width: 32.7rem;
+    margin-top: 1.35rem;
+    color: var(--text-soft);
+    font-size: var(--hero-text-size);
+    line-height: 1.38;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1 / 5;
+    width: var(--hero-image-width);
+    aspect-ratio: 1;
+    justify-self: start;
+    border-radius: 50%;
+    background-image: var(--hero-image);
+    background-position: center;
+    background-size: cover;
+}
+
+.decor-square {
+    position: fixed;
+    z-index: 3;
+    top: var(--decor-top);
+    left: var(--decor-left);
+    width: var(--decor-size);
+    height: var(--decor-size);
+    border: var(--decor-border) solid var(--brand-green);
+    pointer-events: none;
+}
+
+.search-section {
+    position: relative;
+    z-index: 3;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 4.7rem;
+}
+
+.search-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.45rem;
+    color: var(--text-muted);
+
+    h2 {
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    i {
+        font-size: 1.25rem;
+    }
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--search-gap);
+    width: 100%;
+    min-height: 6.25rem;
+    padding: var(--search-padding);
+    border-radius: var(--radius-medium);
+    background-color: var(--brand-green);
+}
+
+.field-control {
+    position: relative;
+    display: block;
+    flex: 1 1 15.8rem;
+    min-width: 10rem;
+    color: var(--text-light);
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--text-light);
+        font-size: 1.125rem;
+        line-height: 1.4;
+        pointer-events: none;
+    }
+
+    input {
+        width: 100%;
+        height: 2.0625rem;
+        padding: 0 2.2rem 0 0;
+        border: 0;
+        border-bottom: 0.0625rem solid var(--input-line);
+        outline: none;
+        background-color: transparent;
+        color: var(--text-light);
+    }
+
+    i {
+        position: absolute;
+        top: 0.18rem;
+        right: 0.65rem;
+        font-size: 1rem;
+        pointer-events: none;
+    }
+}
+
+.search-btn {
+    flex: 0 0 auto;
+    min-height: 2.5625rem;
+    padding: 0.5rem 1.3125rem;
+    border: 0;
+    border-radius: var(--radius-small);
+    background-color: var(--brand-pink);
+    box-shadow: var(--button-shadow);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+
+    &:hover {
+        transform: translateY(-0.08rem);
+        box-shadow: var(--button-shadow-hover);
+        background-color: color.adjust($brand-pink, $lightness: 5%);
+    }
+}
+
+.see-destinations {
+    position: relative;
+    z-index: 3;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 3.25rem;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    transition: color var(--transition-fast);
+
+    &:hover {
+        color: var(--brand-pink);
+    }
+}
+
+.gallery-section,
+.about-section {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --base-font-size: 15px;
+        --container-gap: 5rem;
+        --hero-columns: minmax(22rem, 1fr) minmax(26rem, 41rem);
+        --hero-column-gap: 2rem;
+        --hero-image-width: min(52vw, 41rem);
+        --search-gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --base-font-size: 14px;
+        --header-padding-top: 1.75rem;
+        --hero-min-height: 100vh;
+        --hero-padding-top: 4rem;
+        --hero-grid-height: auto;
+        --hero-columns: 1fr;
+        --hero-title-size: clamp(2rem, 5vw, 3.2rem);
+        --decor-size: 6rem;
+        --decor-border: 0.5rem;
+    }
+
+    .header-container {
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 1rem 1.6rem;
+        max-width: 32rem;
+    }
+
+    .hero-container {
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .hero-content {
+        grid-column: 1;
+        padding-top: 0;
+        padding-right: 18rem;
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 2.5rem;
+        right: -12rem;
+        width: min(70vw, 40rem);
+        opacity: 0.95;
+    }
+
+    .search-section {
+        margin-top: 10rem;
+    }
+
+    .search-bar {
+        flex-wrap: wrap;
+        gap: 1.75rem 2rem;
+    }
+
+    .field-control {
+        flex-basis: calc(50% - 1rem);
+    }
+
+    .search-btn {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --base-font-size: 13px;
+        --container-gap: 2rem;
+        --hero-padding-top: 3.2rem;
+        --hero-title-size: clamp(2.05rem, 9vw, 3rem);
+        --hero-text-size: 1rem;
+        --search-gap: 1.6rem;
+        --search-padding: 1.65rem;
+        --decor-size: 5.5rem;
+        --decor-top: 58vh;
+        --decor-left: -2.4rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 0.8rem 1.15rem;
+        font-size: 0.96rem;
+    }
+
+    .guide-btn {
+        padding: 0.45rem 0.65rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        padding-top: 14rem;
+
+        h1 {
+            max-width: 26rem;
+        }
+    }
+
+    .hero-image {
+        top: 0;
+        right: -7rem;
+        width: min(95vw, 30rem);
+    }
+
+    .search-section {
+        margin-top: 3.5rem;
+    }
+
+    .search-label {
+        gap: 1rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .field-control,
+    .search-btn {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .search-btn {
+        margin-top: 0.25rem;
+    }
+
+    .see-destinations {
+        margin-top: 2.6rem;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        --base-font-size: 12px;
+    }
+
+    .main-nav {
+        gap: 0.7rem 0.95rem;
+    }
+
+    .hero-content {
+        padding-top: 12.5rem;
+    }
+
+    .hero-image {
+        right: -8.5rem;
+        width: 31rem;
+    }
+}
