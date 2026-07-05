@@ -1,0 +1,472 @@
+/* Базові змінні і rem-основа сторінки */
+:root {
+    --page-bg: #f8faf8;
+    --green: #386e41;
+    --pink: #bc436a;
+    --text: #333333;
+    --muted: #767676;
+    --hero-image: url("../img/hero-traveler.jpg");
+    font-size: 16px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--page-bg);
+    color: var(--text);
+    font-family: Avenir, "Open Sans", Arial, sans-serif;
+}
+
+.container {
+    width: min(100% - 15rem, 75rem);
+    margin: 0 auto;
+}
+
+.site-header {
+    position: relative;
+    z-index: 4;
+    padding: 2.5rem 0 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    color: var(--pink);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.75;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    color: #776677;
+    font-size: 1rem;
+}
+
+.main-nav a {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav .active {
+    color: var(--pink);
+}
+
+.main-nav a:hover {
+    transform: translateY(-0.08rem);
+}
+
+.guide-btn {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--green);
+    color: #ffffff !important;
+}
+
+/* Головний екран займає висоту viewport і тримає декоративне фото */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 4.9375rem);
+    padding: 7.5rem 0 2.5rem;
+}
+
+.hero-container {
+    position: relative;
+    display: grid;
+    min-height: 54rem;
+    grid-template-columns: minmax(24rem, 32.875rem) minmax(32rem, 50.75rem);
+    grid-template-rows: auto 1fr auto auto;
+    column-gap: 4.6rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    align-self: start;
+    padding-top: 5.25rem;
+}
+
+.hero-content h1 {
+    max-width: 32.875rem;
+    font-size: clamp(2rem, 2.5vw, 2.25rem);
+    line-height: 1.36;
+    font-weight: 800;
+}
+
+.hero-content h1 span {
+    color: var(--pink);
+}
+
+.hero-text {
+    max-width: 32.7rem;
+    margin-top: 1.35rem;
+    color: #7a7a7a;
+    font-size: 1.125rem;
+    line-height: 1.38;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1 / 5;
+    width: min(56.4vw, 50.75rem);
+    aspect-ratio: 1;
+    justify-self: start;
+    border-radius: 50%;
+    background-image: var(--hero-image);
+    background-position: center;
+    background-size: cover;
+}
+
+.decor-square {
+    position: fixed;
+    z-index: 3;
+    top: 50.8vh;
+    left: -2.1875rem;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 0.625rem solid var(--green);
+    pointer-events: none;
+}
+
+.search-section {
+    position: relative;
+    z-index: 3;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 4.7rem;
+}
+
+.search-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.45rem;
+    color: var(--muted);
+}
+
+.search-label h2 {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.search-label i {
+    font-size: 1.25rem;
+}
+
+/* Пошуковий блок зібраний flex-ом, на мобільних переходить у колонку */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.25rem;
+    width: 100%;
+    min-height: 6.25rem;
+    padding: 1.875rem 2.375rem;
+    border-radius: 0.5rem;
+    background-color: var(--green);
+}
+
+.field-control {
+    position: relative;
+    display: block;
+    flex: 1 1 15.8rem;
+    min-width: 10rem;
+    color: #ffffff;
+}
+
+.field-control span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.field-control input {
+    width: 100%;
+    height: 2.0625rem;
+    padding: 0 2.2rem 0 0;
+    border: 0;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.9);
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.field-control i {
+    position: absolute;
+    top: 0.18rem;
+    right: 0.65rem;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.search-btn {
+    flex: 0 0 auto;
+    min-height: 2.5625rem;
+    padding: 0.5rem 1.3125rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: var(--pink);
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.11);
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-0.08rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(188, 67, 106, 0.24);
+}
+
+.see-destinations {
+    position: relative;
+    z-index: 3;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 3.25rem;
+    color: var(--muted);
+    font-size: 1.125rem;
+    transition: color 0.2s ease;
+}
+
+.see-destinations:hover {
+    color: var(--pink);
+}
+
+.gallery-section,
+.about-section {
+    display: none;
+}
+
+/* Адаптація для планшетів і менших desktop-екранів */
+@media (max-width: 1200px) {
+    :root {
+        font-size: 15px;
+    }
+
+    .container {
+        width: min(100% - 5rem, 75rem);
+    }
+
+    .hero-container {
+        grid-template-columns: minmax(22rem, 1fr) minmax(26rem, 41rem);
+        column-gap: 2rem;
+    }
+
+    .hero-image {
+        width: min(52vw, 41rem);
+    }
+
+    .search-bar {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        font-size: 14px;
+    }
+
+    .site-header {
+        padding-top: 1.75rem;
+    }
+
+    .header-container {
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 1rem 1.6rem;
+        max-width: 32rem;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding-top: 4rem;
+    }
+
+    .hero-container {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .hero-content {
+        grid-column: 1;
+        padding-top: 0;
+        padding-right: 18rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 2.5rem;
+        right: -12rem;
+        width: min(70vw, 40rem);
+        opacity: 0.95;
+    }
+
+    .search-section {
+        margin-top: 10rem;
+    }
+
+    .search-bar {
+        flex-wrap: wrap;
+        gap: 1.75rem 2rem;
+    }
+
+    .field-control {
+        flex-basis: calc(50% - 1rem);
+    }
+
+    .search-btn {
+        width: calc(50% - 1rem);
+    }
+
+    .decor-square {
+        width: 6rem;
+        height: 6rem;
+        border-width: 0.5rem;
+    }
+}
+
+/* Мобільна версія: меню і форма складаються у зручний вертикальний вигляд */
+@media (max-width: 640px) {
+    :root {
+        font-size: 13px;
+    }
+
+    .container {
+        width: min(100% - 2rem, 75rem);
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 0.8rem 1.15rem;
+        font-size: 0.96rem;
+    }
+
+    .guide-btn {
+        padding: 0.45rem 0.65rem;
+    }
+
+    .hero {
+        padding-top: 3.2rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        padding-top: 14rem;
+    }
+
+    .hero-content h1 {
+        max-width: 26rem;
+        font-size: clamp(2.05rem, 9vw, 3rem);
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        top: 0;
+        right: -7rem;
+        width: min(95vw, 30rem);
+    }
+
+    .search-section {
+        margin-top: 3.5rem;
+    }
+
+    .search-label {
+        gap: 1rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.6rem;
+        padding: 1.65rem;
+    }
+
+    .field-control,
+    .search-btn {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .search-btn {
+        margin-top: 0.25rem;
+    }
+
+    .see-destinations {
+        margin-top: 2.6rem;
+    }
+
+    .decor-square {
+        top: 58vh;
+        left: -2.4rem;
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        font-size: 12px;
+    }
+
+    .main-nav {
+        gap: 0.7rem 0.95rem;
+    }
+
+    .hero-content {
+        padding-top: 12.5rem;
+    }
+
+    .hero-image {
+        right: -8.5rem;
+        width: 31rem;
+    }
+}
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18 - Travelers</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <span class="decor-square" aria-hidden="true"></span>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a class="logo" href="index.html">Travelers</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="active" href="index.html">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About Us</a>
+                <a class="guide-btn" href="#search">Book Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="container hero-container">
+            <section class="hero-content" aria-labelledby="hero-title">
+                <h1 id="hero-title">
+                    Know the <span>BEST</span> places to visit when you are on <span>VACATION</span>
+                </h1>
+                <p class="hero-text">
+                    We offer the best and relaxing atmosphere and have one of the best deal to sweeten your vacation and make it a trip to remember. We have luxurious destinations around the world.
+                </p>
+            </section>
+
+            <div class="hero-image" role="img" aria-label="Traveler drinking water in the mountains"></div>
+
+            <section class="search-section" id="search" aria-labelledby="search-title">
+                <div class="search-label">
+                    <h2 id="search-title">Where will we take you</h2>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <form class="search-bar">
+                    <label class="field-control">
+                        <span>Country</span>
+                        <input type="text" aria-label="Country">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </label>
+                    <label class="field-control">
+                        <span>City</span>
+                        <input type="text" aria-label="City">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </label>
+                    <label class="field-control">
+                        <span>Place</span>
+                        <input type="text" aria-label="Place">
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </label>
+                    <button class="search-btn" type="submit">Search Place</button>
+                </form>
+            </section>
+
+            <a class="see-destinations" id="destinations" href="#gallery">
+                <span>See Destinations</span>
+                <i class="fa-solid fa-angles-down" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+
+    <section class="gallery-section" id="gallery" aria-label="Gallery"></section>
+    <section class="about-section" id="about" aria-label="About Travelers"></section>
+</body>
+</html>
