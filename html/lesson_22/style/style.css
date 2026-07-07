@@ -1,0 +1,474 @@
+body {
+    min-width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background: #100e0e;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+}
+
+.hover-board {
+    width: min(1194px, 100%);
+    min-height: 834px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+    padding: 64px clamp(22px, 7vw, 120px);
+    background: #100e0e;
+}
+
+.board-header {
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: #0f89fa;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(34px, 6vw, 72px);
+    line-height: 1;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 72px 64px;
+    align-items: center;
+    justify-items: center;
+}
+
+/* Базовий вигляд кнопок узятий з Figma: чорний фон, синій контур і плавні transition-ефекти. */
+.hover-btn {
+    --blue: #0f89fa;
+    --black: #0d0b0b;
+
+    position: relative;
+    min-width: 112px;
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 32px;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background: transparent;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+    transition:
+        color 0.35s ease,
+        border-color 0.35s ease,
+        background-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease,
+        min-width 0.35s ease,
+        min-height 0.35s ease,
+        font-size 0.35s ease;
+}
+
+.hover-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Більшість ефектів зроблено через псевдоелементи, щоб не додавати зайві теги в HTML. */
+.hover-btn::before,
+.hover-btn::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: var(--blue);
+    transition:
+        width 0.35s ease,
+        height 0.35s ease,
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        left 0.35s ease,
+        right 0.35s ease,
+        top 0.35s ease,
+        bottom 0.35s ease;
+}
+
+.btn-fill::before {
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.btn-fill:hover {
+    color: #ffffff;
+}
+
+.btn-fill:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-glow {
+    min-width: 130px;
+    background: var(--black);
+}
+
+.btn-glow:hover {
+    box-shadow:
+        0 0 14px rgba(15, 137, 250, 0.95),
+        0 0 38px rgba(15, 137, 250, 0.55);
+}
+
+.btn-slide {
+    min-width: 103px;
+}
+
+.btn-slide::before {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+}
+
+.btn-slide:hover {
+    color: #ffffff;
+}
+
+.btn-slide:hover::before {
+    width: 100%;
+}
+
+.btn-raise {
+    min-width: 108px;
+    background: var(--black);
+}
+
+.btn-raise::after {
+    left: 10%;
+    right: 10%;
+    bottom: -8px;
+    height: 8px;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.btn-raise:hover {
+    transform: translateY(-5px);
+}
+
+.btn-raise:hover::after {
+    opacity: 1;
+    bottom: 0;
+}
+
+.btn-fill-up {
+    min-width: 111px;
+}
+
+.btn-fill-up::before {
+    left: 0;
+    bottom: -110%;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-fill-up:hover {
+    color: #ffffff;
+}
+
+.btn-fill-up:hover::before {
+    bottom: 0;
+}
+
+.btn-close {
+    min-width: 110px;
+}
+
+.btn-close::before,
+.btn-close::after {
+    top: 0;
+    width: 2px;
+    height: 100%;
+}
+
+.btn-close::before {
+    left: 0;
+}
+
+.btn-close::after {
+    right: 0;
+}
+
+.btn-close:hover {
+    color: #ffffff;
+}
+
+.btn-close:hover::before,
+.btn-close:hover::after {
+    width: 50%;
+}
+
+.btn-text-change {
+    min-width: 115px;
+    border-color: var(--blue);
+    color: #000000;
+    background: var(--blue);
+}
+
+.btn-text-change span {
+    position: absolute;
+    left: 50%;
+    white-space: nowrap;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.btn-text-change .text-default {
+    transform: translate(-50%, 0);
+}
+
+.btn-text-change .text-hover {
+    opacity: 0;
+    transform: translate(-50%, -34px);
+}
+
+.btn-text-change:hover .text-default {
+    opacity: 0;
+    transform: translate(-50%, 34px);
+}
+
+.btn-text-change:hover .text-hover {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.btn-blend {
+    min-width: 115px;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.btn-blend::before {
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 56px;
+    mix-blend-mode: screen;
+}
+
+.btn-blend:hover::before {
+    width: 100%;
+}
+
+.blend-circle::before {
+    width: 56px;
+    border-radius: 50%;
+}
+
+.blend-circle:hover::before {
+    width: 56px;
+    transform: translateX(59px);
+}
+
+.btn-zoom {
+    min-width: 99px;
+    min-height: 50px;
+    font-size: 12px;
+}
+
+.btn-zoom:hover {
+    min-width: 110px;
+    min-height: 56px;
+    font-size: 16px;
+    transform: scale(1.08);
+}
+
+.btn-offset {
+    min-width: 112px;
+    border-color: transparent;
+    overflow: visible;
+}
+
+.btn-offset::before,
+.btn-offset::after {
+    inset: 0;
+    background: transparent;
+    border: 1px solid var(--blue);
+}
+
+.btn-offset::after {
+    transform: translate(4px, 4px);
+}
+
+.btn-offset:hover {
+    color: #ffffff;
+}
+
+.btn-offset:hover::before,
+.btn-offset:hover::after {
+    background: var(--blue);
+    transform: translate(2px, 2px);
+}
+
+.btn-arrow {
+    min-width: 143px;
+    justify-content: flex-start;
+    background: #000000;
+}
+
+.btn-arrow::before {
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.btn-arrow::after {
+    top: 50%;
+    right: 20px;
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left;
+}
+
+.btn-arrow:hover {
+    min-width: 169px;
+    color: #ffffff;
+    border-color: var(--blue);
+}
+
+.btn-arrow:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-arrow:hover::after {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.btn-shape {
+    min-width: 142px;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.btn-shape::before,
+.btn-shape::after {
+    width: 86px;
+    height: 42px;
+    transform: skew(-18deg);
+}
+
+.btn-shape::before {
+    left: 4px;
+    top: 0;
+    background: #51b851;
+}
+
+.btn-shape::after {
+    right: 4px;
+    bottom: 0;
+}
+
+.btn-shape:hover::before {
+    left: 52px;
+}
+
+.btn-shape:hover::after {
+    right: 52px;
+}
+
+.btn-fancy {
+    min-width: 146px;
+    min-height: 64px;
+    background: #000000;
+}
+
+.btn-fancy::before,
+.btn-fancy::after {
+    width: 64px;
+    height: 1px;
+}
+
+.btn-fancy::before {
+    top: 0;
+    left: 4px;
+}
+
+.btn-fancy::after {
+    right: 4px;
+    bottom: 0;
+}
+
+.btn-fancy:hover {
+    animation: fancy-pulse 0.7s ease both;
+}
+
+.btn-fancy:hover::before {
+    left: calc(100% - 68px);
+}
+
+.btn-fancy:hover::after {
+    right: calc(100% - 68px);
+}
+
+/* Keyframes додані окремо, бо в уроці 22 показували не тільки transition, а й animation. */
+@keyframes fancy-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* На менших екранах кнопки перебудовуються в меншу кількість колонок. */
+@media (max-width: 980px) {
+    .hover-board {
+        min-height: auto;
+    }
+
+    .buttons-grid {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        gap: 52px 36px;
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        align-items: flex-start;
+        padding: 28px 16px;
+    }
+
+    .hover-board {
+        gap: 42px;
+        padding: 36px 12px;
+    }
+
+    .buttons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 34px 18px;
+    }
+
+    .hover-btn {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+}
