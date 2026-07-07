@@ -1,0 +1,166 @@
+body {
+    min-width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+    background: #f4f6f8;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.methodology {
+    width: min(1040px, 100%);
+    margin: 0 auto;
+}
+
+.methodology__header {
+    max-width: 620px;
+    margin-bottom: 34px;
+}
+
+.methodology__label {
+    margin-bottom: 8px;
+    color: #2c7be5;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.methodology__title {
+    font-size: clamp(34px, 6vw, 58px);
+    line-height: 1.05;
+}
+
+.methodology__text {
+    margin-top: 14px;
+    color: #5d6673;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.methodology__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.method-card {
+    min-height: 270px;
+    padding: 24px;
+    border: 1px solid #dce2ea;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.method-card__title {
+    font-size: 24px;
+}
+
+.method-card__text {
+    margin: 10px 0 22px;
+    color: #657080;
+    line-height: 1.5;
+}
+
+/* OOCSS: класи можна використовувати незалежно від вкладеності тегів. */
+.nav-object {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-object-link {
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #edf4ff;
+    color: #2c7be5;
+    font-weight: 700;
+}
+
+/* BEM: block__element--modifier робить назви передбачуваними. */
+.product-card {
+    max-width: 260px;
+    padding: 18px;
+    border-radius: 8px;
+    background: #f7fafc;
+}
+
+.product-card--featured {
+    border: 2px solid #2c7be5;
+}
+
+.product-card__title {
+    font-size: 20px;
+}
+
+.product-card__price {
+    margin: 8px 0 16px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.product-card__button {
+    display: inline-flex;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #2c7be5;
+    color: #ffffff;
+}
+
+/* Atomic CSS: маленький клас відповідає за одну просту властивість. */
+.p-16 {
+    padding: 16px;
+}
+
+.bg-blue {
+    background: #2c7be5;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.radius-8 {
+    border-radius: 8px;
+}
+
+.shadow-small {
+    box-shadow: 0 10px 24px rgba(44, 123, 229, 0.22);
+}
+
+/* SMACSS: layout, module і state класи розділені за ролями. */
+.l-panel {
+    max-width: 280px;
+}
+
+.module-card {
+    padding: 18px;
+    border-radius: 8px;
+    background: #f7fafc;
+}
+
+.module-card-title {
+    font-size: 20px;
+}
+
+.module-card-text {
+    margin-top: 8px;
+    color: #657080;
+}
+
+.is-active {
+    border-left: 6px solid #2c7be5;
+}
+
+@media (max-width: 720px) {
+    .page {
+        padding: 30px 14px;
+    }
+
+    .methodology__grid {
+        grid-template-columns: 1fr;
+    }
+}

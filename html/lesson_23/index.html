@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23 - CSS Methodologies</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="methodology" aria-labelledby="page-title">
+            <div class="methodology__header">
+                <p class="methodology__label">Lesson 23</p>
+                <h1 class="methodology__title" id="page-title">CSS Methodologies</h1>
+                <p class="methodology__text">Невеликі приклади підходів до назв класів з уроку.</p>
+            </div>
+
+            <!-- Кожна картка показує інший підхід до назв класів. -->
+            <div class="methodology__grid">
+                <article class="method-card method-card--oocss">
+                    <h2 class="method-card__title">OOCSS</h2>
+                    <p class="method-card__text">Незалежні класи-обʼєкти без глибоких селекторів.</p>
+                    <nav class="nav-object" aria-label="OOCSS navigation example">
+                        <a class="nav-object-link" href="#">Home</a>
+                        <a class="nav-object-link" href="#">About</a>
+                        <a class="nav-object-link" href="#">Sale</a>
+                    </nav>
+                </article>
+
+                <article class="method-card method-card--bem">
+                    <h2 class="method-card__title">BEM</h2>
+                    <p class="method-card__text">Блок, елемент і модифікатор допомагають зрозуміло називати частини компонента.</p>
+                    <div class="product-card product-card--featured">
+                        <h3 class="product-card__title">Настільна лампа</h3>
+                        <p class="product-card__price">$42</p>
+                        <a class="product-card__button" href="#">Купити</a>
+                    </div>
+                </article>
+
+                <article class="method-card method-card--atomic">
+                    <h2 class="method-card__title">Atomic CSS</h2>
+                    <p class="method-card__text">Маленькі utility-класи відповідають за окремі CSS-властивості.</p>
+                    <div class="p-16 bg-blue text-white radius-8 shadow-small">
+                        Utility-блок
+                    </div>
+                </article>
+
+                <article class="method-card method-card--smacss">
+                    <h2 class="method-card__title">SMACSS</h2>
+                    <p class="method-card__text">Базові, layout, module і state класи розділені за ролями.</p>
+                    <div class="l-panel module-card is-active">
+                        <h3 class="module-card-title">Картка профілю</h3>
+                        <p class="module-card-text">Приклад активного модуля</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
