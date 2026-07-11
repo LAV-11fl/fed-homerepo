@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DesignCafé - Lesson 25</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <header class="site-header fixed-top">
+      <nav class="navbar navbar-expand-lg p-0 h-100">
+        <div class="container site-header__container h-100">
+          <a class="navbar-brand site-logo" href="#top">DesignCafé</a>
+          <button class="navbar-toggler site-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu">
+            <img src="img/hamburger.svg" alt="">
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav site-nav">
+              <li class="nav-item"><a class="nav-link" href="#about">About DesignCafé</a></li>
+              <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="offcanvas offcanvas-end mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+      <div class="mobile-menu__close-wrap">
+        <button type="button" class="mobile-menu__close" data-bs-dismiss="offcanvas" aria-label="Close menu">
+          <img src="img/close.svg" alt="">
+        </button>
+      </div>
+      <div class="offcanvas-body mobile-menu__body">
+        <a href="#about" data-bs-dismiss="offcanvas">About DesignCafé</a>
+        <a href="#menu" data-bs-dismiss="offcanvas">Menu</a>
+        <a href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+        <a href="#news" data-bs-dismiss="offcanvas">News</a>
+      </div>
+    </div>
+
+    <main id="top">
+      <section class="hero d-flex align-items-center justify-content-center text-center">
+        <h1>Grand Open</h1>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="container design-container text-center">
+          <div class="section-title">
+            <h2>Menu</h2>
+            <p>Menu</p>
+          </div>
+
+          <!-- Bootstrap grid keeps the cards in one row only when there is enough width; below xl they stack vertically. -->
+          <div class="row menu-list justify-content-center g-4 g-xl-5">
+            <div class="col-12 col-xl-4 d-flex justify-content-center">
+              <article class="menu-card">
+                <img src="img/drink.png" alt="Drink">
+                <div class="menu-card__label">Drink</div>
+              </article>
+            </div>
+            <div class="col-12 col-xl-4 d-flex justify-content-center">
+              <article class="menu-card">
+                <img src="img/cakes.png" alt="Cakes">
+                <div class="menu-card__label">Cakes</div>
+              </article>
+            </div>
+            <div class="col-12 col-xl-4 d-flex justify-content-center">
+              <article class="menu-card">
+                <img src="img/foods.png" alt="Foods">
+                <div class="menu-card__label">Foods</div>
+              </article>
+            </div>
+          </div>
+
+          <a class="design-button" href="#menu">Details</a>
+        </div>
+      </section>
+
+      <section class="about-section d-flex align-items-center text-center" id="about">
+        <div class="container">
+          <div class="section-title section-title--light">
+            <h2>About</h2>
+            <p>About DesignCafé</p>
+          </div>
+          <p class="about-text mx-auto">
+            DesignCafé is a calm space where creative people meet,<br class="d-none d-md-block">
+            share ideas, find collaborators,<br class="d-none d-md-block">
+            discuss new projects,<br class="d-none d-md-block">
+            and enjoy good coffee together.
+          </p>
+          <a class="design-button" href="#about">More</a>
+        </div>
+      </section>
+
+      <section class="news-section" id="news">
+        <div class="container design-container">
+          <div class="section-title text-center">
+            <h2>News</h2>
+            <p>News</p>
+          </div>
+          <div class="news-box mx-auto">
+            <div class="row news-row g-0">
+              <div class="col-12 col-md-auto news-date">Nov 6 (Sat)</div>
+              <div class="col-12 col-md news-text">From 17:00, we will host a screening of design and video works collected from around the world.</div>
+            </div>
+            <div class="row news-row g-0">
+              <div class="col-12 col-md-auto news-date">Oct 29 (Sat)</div>
+              <div class="col-12 col-md news-text">DesignCafé is now open. We look forward to welcoming you.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container design-container d-flex flex-column flex-md-row justify-content-md-between text-center text-md-start">
+        <address class="mb-4 mb-md-0">
+          Akasaka xx-xx, Minato-ku, Tokyo<br>
+          (03) 9999-9999<br>
+          contact@designcafe.com
+        </address>
+        <p class="copyright mb-0">(c) 2022 DesignCafé. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a class="page-top" href="#top" aria-label="Page top">
+      <img src="img/page-top.png" alt="">
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+
+

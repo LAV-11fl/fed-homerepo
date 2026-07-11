@@ -1,0 +1,397 @@
+:root {
+  --color-main: #668e68;
+  --color-brown: #81613b;
+  --color-news: rgba(129, 97, 59, 0.2);
+  --shadow-dark: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  --font-hand: "Shadows Into Light", cursive;
+  --font-jp: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  font-family: var(--font-jp);
+  font-weight: 500;
+}
+
+.site-header {
+  height: 80px;
+  background: var(--color-main);
+}
+
+.design-container,
+.site-header__container {
+  max-width: 1110px;
+}
+
+.site-logo {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  line-height: 1;
+  padding: 0;
+}
+
+.site-logo:hover,
+.site-logo:focus {
+  color: #fff;
+}
+
+.site-nav {
+  gap: 52px;
+}
+
+.site-nav .nav-link {
+  color: #fff;
+  font-size: 18px;
+  line-height: 29px;
+  padding: 0;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.site-toggler {
+  width: 45px;
+  height: 45px;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.site-toggler:focus {
+  box-shadow: none;
+}
+
+.site-toggler img,
+.mobile-menu__close img,
+.page-top img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  min-height: 520px;
+  margin-top: 80px;
+  background: url("../img/hero-coffee.png") center center / cover no-repeat;
+}
+
+.hero h1 {
+  color: #fff;
+  font-family: var(--font-hand);
+  font-size: 110px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+  text-shadow: var(--shadow-dark);
+  white-space: nowrap;
+}
+
+.menu-section {
+  padding: 60px 0 62px;
+}
+
+.section-title {
+  margin-bottom: 39px;
+}
+
+.section-title h2 {
+  font-family: var(--font-hand);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 35px;
+  margin: 0;
+}
+
+.section-title p {
+  font-size: 20px;
+  line-height: 35px;
+  margin: 0;
+}
+
+.section-title--light {
+  color: #fff;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.menu-list {
+  margin-bottom: 39px;
+}
+
+/* Круглі картки повторюють блоки меню з макета Figma. */
+.menu-card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border: 9px solid var(--color-brown);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.menu-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__label {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  left: -9px;
+  height: 91px;
+  padding-top: 23px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.design-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--color-main);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.design-button::after {
+  content: "";
+  width: 7px;
+  height: 12px;
+  margin-left: 18px;
+  background: url("../img/arrow.svg") center / contain no-repeat;
+}
+
+.design-button:hover,
+.design-button:focus {
+  color: #fff;
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.about-section {
+  min-height: 600px;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../img/about-cafe.png") center center / cover no-repeat;
+}
+
+.about-text {
+  max-width: 430px;
+  margin-bottom: 54px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 26px;
+  text-shadow: var(--shadow-dark);
+}
+
+.news-section {
+  padding: 83px 0 80px;
+  background: var(--color-news);
+}
+
+.news-section .section-title {
+  margin-bottom: 62px;
+}
+
+.news-box {
+  max-width: 1109px;
+  min-height: 102px;
+  padding: 20px;
+  border: 1px solid var(--color-main);
+  background: #fff;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.news-row + .news-row {
+  margin-top: 10px;
+}
+
+.news-date {
+  width: 121px;
+}
+
+.site-footer {
+  min-height: 180px;
+  padding: 20px 0;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.site-footer address {
+  margin: 0;
+  font-style: normal;
+}
+
+.copyright {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+.page-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+}
+
+.mobile-menu {
+  width: 225px !important;
+  border: 0;
+  background: transparent;
+}
+
+.mobile-menu__close-wrap {
+  height: 80px;
+  padding-left: 155px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu__close {
+  width: 70px;
+  height: 80px;
+  border: 0;
+  padding: 15px 12px 20px 13px;
+  background: var(--color-main);
+}
+
+.mobile-menu__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+  height: 281px;
+  padding: 42px 46px;
+  background: #fff;
+}
+
+.mobile-menu__body a {
+  color: var(--color-main);
+  font-size: 18px;
+  line-height: 29px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* На вузьких екранах підганяю висоти й відступи під мобільний макет. */
+@media (max-width: 767.98px) {
+  .site-logo {
+    font-size: 44px;
+  }
+
+  .site-header__container {
+    padding-right: 12px;
+    padding-left: 14px;
+  }
+
+  .hero {
+    min-height: 363px;
+    background-position: center top;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .menu-section {
+    padding: 40px 0 60px;
+  }
+
+  .section-title {
+    margin-bottom: 21px;
+  }
+
+  .menu-list {
+    gap: 30px 0;
+    margin-bottom: 50px;
+  }
+
+  .menu-card {
+    width: 300px;
+    height: 300px;
+  }
+
+  .menu-card__label {
+    height: 79px;
+    padding-top: 19px;
+  }
+
+  .about-section {
+    min-height: 364px;
+    background-position: center center;
+  }
+
+  .section-title--light {
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    max-width: 360px;
+    margin-bottom: 28px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .news-section {
+    padding: 50px 0 48px;
+  }
+
+  .news-section .section-title {
+    margin-bottom: 49px;
+  }
+
+  .news-box {
+    max-width: 358px;
+    min-height: 217px;
+    padding: 20px;
+  }
+
+  .news-row + .news-row {
+    margin-top: 10px;
+  }
+
+  .news-date {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .site-footer {
+    min-height: 180px;
+    padding: 20px 0;
+  }
+
+  .copyright {
+    margin-top: 38px;
+  }
+
+  .page-top {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+
+
